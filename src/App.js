@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { createContext, useState } from 'react';
 import './App.css';
+import TodoList from './components/TodoList';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactSwitch from 'react-switch';
+export const ThemeContext = createContext(null)
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const [theme, setTheme] = useState("light")
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light" ))
+  }
+   return (
+    <ThemeContext.Provider value={{theme, toggleTheme}}>
+    <div className="App" id={theme} >
 
+   <TodoList />
+   <div className='switch'>
+    <label>{theme === "light" ? "Light Mode" : "Dark Mode"}</label>
+    <ReactSwitch  onChange={toggleTheme} checked={theme ==="dark"}/>
+    </div> 
+    </div>
+    </ThemeContext.Provider>
+  );
+
+}
 export default App;

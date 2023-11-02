@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,118 @@
   to {
     transform: rotate(360deg);
   }
+} */ 
+
+.header{
+  height:200px;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.card-container{
+  height: 300px;
+  width: 300px;
+  box-shadow: 0px 3px 50px #A5A5A5;
+}
+
+.card-wrapper{
+  width: 270px; 
+  height: 200px; 
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.card-top{
+  width: 100%;
+  height: 2%;
+}
+
+.task-holder{
+  width: 100%;
+  height: 98%;
+  padding: 10px 10px;
+  display : flex;
+  word-wrap: break-word;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-header{
+  
+  margin-top: 10px;
+  margin-bottom: 10px;
+  max-width: 180px;
+  height: 30px;
+  padding: 1px 1px !important;
+  text-align: center;
+}
+
+.task-container{
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding : 40px 100px;
+}
+
+.far{
+  margin-right:  13px;
+}
+
+#dark{
+  background-color:#0f0f0f;
+}
+#dark .task-holder {
+  color: white;
+}
+#dark .card-header{
+  background-color: #0f0f0f;
+}
+#dark .header{
+  background-color: #222222 ;
+  color: white;
+} 
+#dark label{
+  color: white;
+}
+
+
+
+.switch{
+  position: relative;
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+#dark .card-wrapper {
+  background-color: #222222;
+  box-shadow: 0px 3px 50px #1a1818;
+}
+
+#light .header{
+  background-color: #E9EEF6;
+}
+
+#light .task-holder{
+  color: black;
+}
+
+#light .card-wrapper{
+  background-color: white;
+  box-shadow: 0px 3px 50px #1a1818;
+}
+#light .card-header{
+  background-color: white;
+}
+
+#light .task-container{
+  background-color: #F6F7F8;
 }
